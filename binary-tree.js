@@ -78,6 +78,12 @@ class BinaryTree {
                 }
           return node;    
        }
+       SearchMin(node)
+       {
+        if (node.left == null);
+        return node;
+        return this.SearshMin(node.left);
+        }
       
    
 	size() {

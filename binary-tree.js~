@@ -37,17 +37,14 @@ class BinaryTree {
 	return this.myContains(this.root, data);
 	}
     
-    myContains(node,data)
-    {
-        if(node == null)
-        {
+    	myContains(node,data) {
+        if(node == null){
             return false;
         }      
         if( node.data == data) {
         return true;
         }
-        if(data < node.data)
-        {
+        if(data < node.data){
             return this.myContains(node.left, data);           
           }
         else{
@@ -56,12 +53,11 @@ class BinaryTree {
     }
 
 	remove(data) {
-       this.root =  this.myRemove(this.root, data);   
+       	 this.root =  this.myRemove(this.root, data);   
 
 	}
     
-    myRemove (node, data)
-    {
+       myRemove (node, data) {
         if(node == null) {
             return node;
         }        
@@ -81,16 +77,22 @@ class BinaryTree {
                 else node = node.right;
                 }
           return node;    
-    }
+       }
       
    
 	size() {
+        return this.mySize(this.root);
         }
         
-    
+        mySize(node){
+        if(node == null) {
+            return 0;
+        }
+        return this.mySize(node.right) + 1 + this.mySize(node.left);     
+         } 
 
 	isEmpty() {
-       
+         return this.root == null;     
 
 	}
 }
