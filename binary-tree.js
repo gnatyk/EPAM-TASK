@@ -56,9 +56,33 @@ class BinaryTree {
     }
 
 	remove(data) {
-      
+       this.root =  this.myRemove(this.root, data);   
 
-	}  
+	}
+    
+    myRemove (node, data)
+    {
+        if(node == null) {
+            return node;
+        }        
+        if( data < node.data) {
+            node.left = this.myRemove(node.left, data);
+        }
+        else if(data > node.data) {
+            node.right = this.myRemove(node.right, data);
+        }            
+        else if (node.left != null && node.right != null) {
+            node.data = this.SearchMin(node.right).data;
+            node.right = this.myRemove(node.right, node.right.data)
+            }
+            else {
+                if( node.left != null) 
+                node = node.left;
+                else node = node.right;
+                }
+          return node;    
+    }
+      
    
 	size() {
         }
