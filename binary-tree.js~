@@ -34,26 +34,8 @@ class BinaryTree {
 
 	contains(data) {
        
-	return this.myContains(this.root, data);
-	}
-    
-    myContains(node,data)
-    {
-        if(node == null)
-        {
-            return false;
-        }      
-        if( node.data == data) {
-        return true;
-        }
-        if(data < node.data)
-        {
-            return this.myContains(node.left, data);           
-          }
-        else{
-            return this.myContains(node.right, data);
-        }      
-    }
+	} 
+
 
 	remove(data) {
       
